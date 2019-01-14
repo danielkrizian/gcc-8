@@ -1,0 +1,38 @@
+# This file created by conda-build 3.0.30
+# meta.yaml template originally from:
+# /home/loic/Work/QuantStack/gcc-7/recipe, last modified Thu May 17 10:56:55 2018
+# ------------------------------------------------
+
+package:
+    name: gcc-8
+    version: 8.2.0
+source:
+    fn: gcc-8.2.0.tar.gz
+    md5: ee04f0c22a941f5f17d93809387f2729
+    url: ftp://ftp.gnu.org/gnu/gcc/gcc-8.2.0/gcc-8.2.0.tar.gz
+build:
+    detect_binary_files_with_prefix: 'false'
+    number: '1'
+    string: '1'
+requirements:
+    build:
+        - gmp 6.1.2 0
+        - isl 0.17.1 1
+        - libiconv 1.15.*
+        - mpc 1.1.0 5
+        - mpfr 4.0.1 0
+    run:
+        - gmp>=6.1
+        - isl>=0.17,<=0.17.1
+        - libiconv>=1.15
+        - mpc>=1.1
+        - mpfr>=4.0.1
+test:
+    commands:
+        - gcc --help
+about:
+    home: http://gcc.gnu.org/
+    license: GPL
+    summary: The GNU Compiler Collection
+extra:
+    final: 'true'
